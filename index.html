@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to ASCII Characters</title>
+    <style>
+        
+        body{
+            margin: 0;
+            padding: 0;
+            max-height: 100vh;
+        }
+        #header{
+            position: fixed;
+            top:0;
+            height: fit-content;
+            width: 100vw;
+            background-color: blanchedalmond;
+            padding: 10px;
+            z-index: 10000;
+        }
+        
+        #output{
+            display: block;
+            text-align: justify;
+            font-family: monospace;
+            letter-spacing: 5px;
+            width: fit-content;
+            color:white;
+            background-color: black;
+            margin-top: 50px;
+            margin-right: 0%;
+            transform-origin: top left;
+        }
+        .btn{
+            border-radius: 0;
+            border: none;
+            padding: 5px;
+        }
+        .btn-larger{
+            font-size: larger;
+        }
+        .btn-large{
+            font-size: large;
+        }
+        .btn-primary{
+            background-color: #2200CC;
+            color: white;
+        }
+        .btn-success{
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <span style="color: red"><b>Image to ASCII Image</b></span> ||
+        &nbsp;&nbsp;
+        <form style="display: inline-block;" action="" onsubmit="return convert_image(event);">
+            <input type="file" name="image_file" id="image_file" required>
+            <label for="image_width">Image Width [100,1000]
+                <input required type="number" name="image_width" id="image_width" placeholder="Image Width" min="100" max="1000" value="300">
+            </label>
+            ||&nbsp;&nbsp;
+            <label for="image_color">Image ASCII Color
+                <select required name="image_color" id="image_color">
+                    <option value="0" selected>BLACK</option>
+                    <option value="1">WHITE</option>
+                </select>
+            </label>
+            <input type="submit" class = "btn btn-larger btn-success" id = "submit_btn" value="Convert">
+        </form>
+        || &nbsp;&nbsp; ZOOM
+        <button id ="zoom_out" class="btn btn-primary btn-large">-</button>
+        <button id ="zoom_in" class="btn btn-primary btn-large">+</button>
+        <button id ="zoom_reset" class="btn btn-primary btn-large">Reset</button>
+    </header>
+    
+    <pre id="output"></pre>
+    <script defer src="main.js"></script>
+</body>
+</html>
