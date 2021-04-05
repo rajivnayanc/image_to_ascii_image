@@ -25,6 +25,7 @@ window.addEventListener('resize',()=>{
 })
 const get_character = (gray,type)=>{
     // const mappings = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'.";
+    
     const mappings = " .:-=+*#%@";
     let t = gray/255;
     switch (type) {
@@ -37,7 +38,7 @@ const get_character = (gray,type)=>{
         default:
             break;
     }
-    t *= mappings.length;
+    t *= mappings.length-1;
     return mappings[Math.floor(t)];
 }
 
