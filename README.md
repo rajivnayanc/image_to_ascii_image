@@ -2,7 +2,7 @@
 
 This project converts an RGB Image to ASCII Image using set of ASCII Characters based on grayscale lumination.
 
-### Demo Link : [LINK](https://rajivnayanc.github.io/image_to_asccii_image/)
+### Demo Link : [LINK](https://rajivnayanc.github.io/image_to_ascii_image/)
 
 ## Example
 
